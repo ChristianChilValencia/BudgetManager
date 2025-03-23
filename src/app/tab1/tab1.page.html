@@ -1,17 +1,31 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      Budget Manager
     </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="reset()">
+        <ion-icon slot="icon-only" name="refresh"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div style="padding: 16px;">
+  <h1>The 50/30/20 Rule</h1>
+    <h3>💰Income:</h3>
+      <ion-item>
+        <ion-input type="number" aria-placeholder="Insert your Income" [(ngModel)]="incomeInput" (input)="budget()"></ion-input>
+      </ion-item>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+    <h3>💸 Results: </h3>  
+    
+    <ion-label>Needs:</ion-label>
+      <ion-input type="number" placeholder="Your 50%" [value]="needs" readonly></ion-input>
+    <ion-label>Wants:</ion-label>
+      <ion-input type="number" placeholder="Your 30%" [value]="wants" readonly></ion-input>      
+    <ion-label>Savings:</ion-label>
+      <ion-input type="number" placeholder="Your 20%" [value]="savings" readonly></ion-input>
+  </div>
 </ion-content>
