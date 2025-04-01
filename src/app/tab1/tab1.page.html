@@ -14,13 +14,8 @@
 <ion-content [fullscreen]="true">
   <div style="padding: 16px;">
   <h1>The 50/30/20 Rule</h1>
-    <h3>💰Income:</h3>
-      <ion-item>
-        <ion-input type="number" aria-placeholder="Insert your Income" [(ngModel)]="incomeInput" (input)="budget()"></ion-input>
-      </ion-item>
 
     <h3>💸 Results: </h3>  
-    
     <ion-label>Needs:</ion-label>
       <ion-input type="number" placeholder="Your 50%" [value]="needs" readonly></ion-input>
     <ion-label>Wants:</ion-label>
@@ -28,4 +23,15 @@
     <ion-label>Savings:</ion-label>
       <ion-input type="number" placeholder="Your 20%" [value]="savings" readonly></ion-input>
   </div>
+
 </ion-content>
+
+<ion-footer style="background-color: black; padding: 8px; border-radius: 4px;">
+  <div>
+    <h3>💰Income:</h3>
+    <ion-item>
+      <ion-input type="number" placeholder="Insert your Income" [(ngModel)]="incomeInput" (input)="budget()">
+      </ion-input>
+    </ion-item>
+  </div>
+</ion-footer>
